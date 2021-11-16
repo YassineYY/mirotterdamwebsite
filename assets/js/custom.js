@@ -1,18 +1,18 @@
 
 function loadDesign(){
-    let url = window.location.href;
-    if (screen.width >= 768) {
-        document.location = "index.html";
-    }
-    else if (screen.width < 730 && url.includes('ontwerpen')){
-        let urlParams = new URLSearchParams(window.location.search); 
-        console.log(urlParams.get('locatie'))
-        document.getElementById('plaatsnaam').innerHTML = "Locatie: "+ urlParams.get('locatie');
-        console.log("verified")
-    }
-    else{
-        document.location = "index.html";
-    }
+    // let url = window.location.href;
+    // if (screen.width >= 768) {
+    //     document.location = "index.html";
+    // }
+    // else if (screen.width < 730 && url.includes('ontwerpen')){
+    //     let urlParams = new URLSearchParams(window.location.search); 
+    //     console.log(urlParams.get('locatie'))
+    //     document.getElementById('plaatsnaam').innerHTML = "Locatie: "+ urlParams.get('locatie');
+    //     console.log("verified")
+    // }
+    // else{
+    //     document.location = "index.html";
+    // }
 
 }
 
