@@ -4,35 +4,37 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>MiRotterdam Ontwerpomgeving</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="description" content="ontwerpomgeving voor mirotterdam">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
 
-  <!-- Favicons -->
+  <!-- Favicon -->
   <link href="assets/img/favicon.png" rel="icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- bootstrap -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!-- end bootstrap -->
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- objecten van design scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/Draggable.min.js"></script>
+    <script src="scripts/design-maker/menu-slider.js"></script>
+    <script type="module" src="scripts/design-maker/scripts.js"></script>
+  <!--end scripts-->
 
-  <!-- Template Main CSS File -->
+  <!-- css & javascript File declaration -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
   <script src="assets/js/custom.js"></script>
-
-  <!-- jquery? potentially-->
-  <script src="jquery-3.5.1.min.js"></script>
     
 </head>
-
-<body onload="loadDesign()"></body>
+<button style="width:100px; height:100px; background-color:black; color:white;" onclick="test()">yo</button>
+<body onload="loadDesign()">
 
   <!-- Header -->
   <header id="header" class="fixed-top ">
@@ -40,23 +42,23 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- Slider -->
-<div id="herobox" class="test">
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-8">
-          <h1>MiRotterdam</h1>
-          <h2 ><i id="plaatsnaam"></i></h2>
-          <h2>Begin met ontwerpen via de knop hieronder!</h2>
-          <a id="playbtn" onclick="showAbout()" href="#about" class="play-btn mb-4"></a>
+  <!-- Slider Section -->
+  <div id="herobox" class="test" style="display:none;">
+    <section id="hero" class="d-flex flex-column justify-content-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8">
+            <h1>MiRotterdam</h1>
+            <h2 ><i id="plaatsnaam"></i></h2>
+            <h2>Begin met ontwerpen via de knop hieronder!</h2>
+            <a id="playbtn" onclick="showAbout()" href="#about" class="play-btn mb-4"></a>
+          </div>
         </div>
       </div>
-    </div>
-  </section><!-- End Slider -->
-</div><!-- herobox-->
-  <main id="main">
+    </section><!-- End Slider -->
+  </div><!-- herobox-->
 
+  <main id="main">
     <!-- verhaallijn -->
     <section id="about" class="about" style="display:none;">
       <div class="container">
@@ -88,9 +90,7 @@
       </div>
     </section><!-- End Section -->
 
-    <div id="aboutGradient" class="gradient" style="display:none;"></div>
-
-    <!-- Thema -->
+    <!-- Thema Section-->
     <section id="thema" class="thema" style="display:none;"><!--themas-->
       <div class="container">
         <div class="section-title">
@@ -161,22 +161,53 @@
         <a id = "themabutton" onclick="showDesign()" href="#design" class="btn-thema-next" style="display:none;">Volgende</a>
       </div>
     </section><!-- End Section -->
-    <div id="servicegradient" class="gradient" style="display:none;"></div>
 
-
-      
-
-    <!-- ======= Design Section ======= -->
-    <section id="design" class="design" style="display:none;">
+    <!-- Design Section -->
+    <section id="design" class="design" style="display:block;">
       <div class="container" >
-        <div class="section-title">
-          <h2>Ontwerpen</h2>
-          <p>1 </p>
-          <p>2</p>
+        <!-- <div class="section-title"><h2>Ontwerpen</h2></div><div class="design-content"></div> -->
+        
+        <div class="element-editor" id="element-editor">
+          <h2>Aanpassen</h2>
+
+          <div class="editor-attribute-choices">
+            <span id="choice-size" class="highlighted">Grootte</span>
+            <span id="choice-color">Kleur</span>
+            <span id="choice-mirror">Spiegelen</span>
+          </div>
+
+          <div class="attribute-editor">
+            <div class="scale-slider-container shown" id="scale-slider-container">
+              <label for="scale-slider" class="scale-slider-label">
+                <input type="range" class="scale-slider" id="scale-slider">
+              </label>
+            </div>
+
+            <div class="color-choices-container" id="color-choices-container">
+              <div class="color-button blue" id="color-choice-green"><span></span></div>
+              <div class="color-button red" id="color-choice-blue"><span></span></div>
+              <div class="color-button orange" id="color-choice-yellow"><span></span></div>
+              <div class="color-button lavender" id="color-choice-green"><span></span></div>
+              <div class="color-button purple" id="color-choice-blue"><span></span></div>
+              <div class="color-button yellow" id="color-choice-yellow"><span></span></div>
+              <div class="color-button green" id="color-choice-yellow"><span></span></div>
+            </div>
+          </div>
         </div>
-        <div class="design-content"></div>
-      </div>
-      <div class="gradient"></div>
+
+          <div class="elements-menu-container">
+            <h2>Bibliotheek</h2>
+            <div class="elements-menu" id="elements-menu"></div>
+          </div>
+
+          <div id="canvas" class="canvas"></div>
+
+          <div class="options" id="options">
+            <button class="option-button elements-menu-button" id="elements-menu-button"></button>
+            <button class="option-button attribute-menu-button" id="attribute-menu-button" disabled></button>
+            <button class="option-button ok-button" id="ok-button"></button>
+          </div>
+      </div><!-- End container -->
     </section><!-- End Design Section -->
 
 
@@ -266,28 +297,26 @@
 
 
   </main><!-- End #main -->
-
+</body>
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="container"></div>
+    <div class="container">
+
+
+    </div>
+
+
+    <!-- bootstrap data -->
+    <div id="preloader"></div>
+    <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
+  
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- JS Files -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/main.js"></script>
+    
   </footer><!-- End Footer -->
-  
-  <div id="preloader"></div>
-  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- JS Files -->
-  <script src="assets/js/custom.js"></script>
-  <script src="assets/js/main.js"></script>
-  
-
-</body>
-
 </html>
