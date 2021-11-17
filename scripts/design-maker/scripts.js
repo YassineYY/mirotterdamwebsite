@@ -1,8 +1,8 @@
 import {setCanvasImage} from "./setCanvasImage.js"
 import {loadElements} from "./loadElements.js"
 import {CanvasElement} from "./CanvasElement.js"
-import {Slider} from "./ElementSizeSlider.js"
-import {AttributeEditor} from "./AttributeEditor.js"
+import {Slider} from "./attribute-editor/ElementSizeSlider.js"
+import {AttributeEditor} from "./attribute-editor/AttributeEditor.js"
 
 (() => {
     const canvas = document.getElementById('canvas')

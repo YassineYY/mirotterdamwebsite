@@ -1,3 +1,5 @@
+import {getSelectedElement} from "../utils/getSelectedElement.js";
+
 const slider = document.getElementById('scale-slider')
 
 export function Slider(imageWidth, imageMargin) {
@@ -13,8 +15,4 @@ export function Slider(imageWidth, imageMargin) {
 
 export function updateSlider() {
     slider.value = getSelectedElement().width
-}
-
-function getSelectedElement() {
-    return document.querySelector('.selected')
 }

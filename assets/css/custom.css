@@ -5,21 +5,14 @@ html, body {
     font: 14px "Open Sans", Arial, sans-serif;
 }
 
-body.design-maker {
-    background-color: #303030;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-body.design-maker h2 {
+h2 {
     font-size: 1.7em;
     padding-left: 30px;
     font-family: Lato, sans-serif;
     margin-bottom: 0.5em;
 }
 
+/*<=== Attribute Editor ===>*/
 .element-editor {
     position: absolute;
     background-color: rgba(144, 238, 144, 0.85);
@@ -55,7 +48,8 @@ body.design-maker h2 {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    overflow: scroll;
+    margin-top: 5px;
 }
 
 .attribute-editor .scale-slider-container {
@@ -66,6 +60,8 @@ body.design-maker h2 {
 .attribute-editor .scale-slider-container.shown {
     display: block;
 }
+
+/* <=== Color Editor ===> */
 
 .attribute-editor .color-choices-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -78,41 +74,56 @@ body.design-maker h2 {
     display: grid;
 }
 
-.attribute-editor .color-button {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    width: 30px;
-    height: 30px;
+.color-choices-container > button {
+    width: 75px;
+    height: 75px;
+    border: #202020 solid 1px;
+    border-radius: 10px;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+}
+/* <=== END Color Editor ===> */
+
+/* <=== Scale Slider ===> */
+.scale-slider-label {
+    width: 90%;
+}
+
+.scale-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 5% 0 auto;
+    height: 15px;
+    border-radius: 5px;
+    background: whitesmoke;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.scale-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
 }
 
-.attribute-editor .color-button.blue {
-    background-color: #003049;
+.scale-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
 }
+/* <=== END Scale Slider ===> */
+/*<=== END Attribute Editor ===>*/
 
-.attribute-editor .color-button.red {
-    background-color: #D62828;
-}
-
-.attribute-editor .color-button.orange {
-    background-color: #F77F00;
-}
-
-.attribute-editor .color-button.lavender {
-    background-color: #CFBFF7;
-}
-
-.attribute-editor .color-button.purple {
-    background-color: #8B80F9;
-}
-
-.attribute-editor .color-button.green {
-    background-color: #4D8B31;
-}
-
-.attribute-editor .color-button.yellow {
-    background-color: #FFC800;
-}
-
+/* <=== Element Library ===>*/
 .elements-menu-container {
     position: absolute;
     left: -125%;
@@ -142,7 +153,9 @@ body.design-maker h2 {
     max-height: 125px;
     object-fit: scale-down;
 }
+/* <=== END Element Library ===>*/
 
+/*<=== Canvas ===>*/
 .canvas {
     height: 93%;
     width: 100%;
@@ -162,7 +175,9 @@ body.design-maker h2 {
     padding: 5px;
     border-radius: 20px;
 }
+/*<=== END Canvas ===>*/
 
+/*<=== Option Buttons ===>*/
 .options {
     display: flex;
     justify-content: space-evenly;
@@ -204,37 +219,4 @@ body.design-maker h2 {
 .option-button:disabled {
     background-color: #75816b;
 }
-
-.scale-slider-label {
-    width: 90%;
-}
-
-.scale-slider {
-    -webkit-appearance: none;
-    width: 100%;
-    margin: 5% 0 auto;
-    height: 15px;
-    border-radius: 5px;
-    background: whitesmoke;
-    outline: none;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.scale-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
-}
-
-.scale-slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
-}
+/*<=== END Option Buttons ===>*/

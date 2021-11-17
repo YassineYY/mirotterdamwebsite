@@ -1,4 +1,5 @@
-import {updateSlider} from "./ElementSizeSlider.js";
+import {updateSlider} from "./attribute-editor/ElementSizeSlider.js";
+import {setChosenElement} from "./attribute-editor/ColorChooser.js";
 
 const attributeMenuButton = document.getElementById('attribute-menu-button')
 
@@ -12,6 +13,7 @@ const selectElement = e => {
     selectedElement.classList.add('selected')
     attributeMenuButton.disabled = false
     updateSlider()
+    setChosenElement(e.target)
 }
 
 const unselectElement = e => {
