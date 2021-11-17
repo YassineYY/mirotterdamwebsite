@@ -1,14 +1,6 @@
 export function setCanvasImage(canvas) {// get query string parameter
-    const defaultLocationId = 5
-    const locationId = getLocationId() || defaultLocationId // default location id of 5 for testing
-
-    // Oude code, maakt gebruik van API
-    // set background of canvas
-    // canvas.style.backgroundImage
-    //     = `url('${window.location.protocol}//${window.location.host}/api/locations/${locationId}/image')`
-
+    const locationId = getLocationId() || 5// default location id of 5 for testing
     canvas.style.backgroundImage = `url('assets/img/location_images/L-${locationId}.png')`
-    alert('gets here');
 }
 
 function getLocationId() {

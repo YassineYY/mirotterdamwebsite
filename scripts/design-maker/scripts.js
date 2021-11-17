@@ -1,13 +1,14 @@
-import {setCanvasImage} from "scripts/design-maker/setCanvasImage.js";
-import {loadElements} from "scripts/design-maker/loadElements.js";
-import {CanvasElement} from "scripts/design-maker/CanvasElement.js";
-import {Slider} from "scripts/design-maker/ElementSizeSlider.js";
-import {AttributeEditor} from "scripts/design-maker/AttributeEditor.js";
+import {setCanvasImage} from "./setCanvasImage.js"
+import {loadElements} from "./loadElements.js"
+import {CanvasElement} from "./CanvasElement.js"
+import {Slider} from "./ElementSizeSlider.js"
+import {AttributeEditor} from "./AttributeEditor.js"
 
-    const canvas = document.getElementById('canvas');
-    const canvasImageWidth = 100;
+(() => {
+    const canvas = document.getElementById('canvas')
+    const canvasImageWidth = 100
 
-    setCanvasImage(canvas);
+    setCanvasImage(canvas)
 
     loadElements(
         (element) => CanvasElement(canvas, element, canvasImageWidth))
@@ -15,3 +16,4 @@ import {AttributeEditor} from "scripts/design-maker/AttributeEditor.js";
     AttributeEditor()
 
     Slider(canvasImageWidth, 50)
+})()
