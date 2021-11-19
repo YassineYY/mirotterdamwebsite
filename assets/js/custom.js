@@ -20,6 +20,14 @@ function showAbout() {
     document.getElementById('about').style.display = "block";
     document.getElementById('herobox').style.display = "none";
  }
+ function kijkenBtn() {
+    document.getElementById('kijken').style.display = "none";
+    document.getElementById('luisteren').style.display = "hidden";
+}
+ function luisterBtn() {
+    document.getElementById('luisteren').style.display = "none";
+    document.getElementById('inspiratie').style.display = "hidden";
+ }
  function showthema() {
     document.getElementById('thema').style.display = "block";
     // document.getElementById('aboutGradient').style.display = "block";  
